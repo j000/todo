@@ -1,20 +1,20 @@
 {
-  "name": "todo",
-  "version": "0.0.1",
-  "description": "Todo list",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jarosław Rymut",
-  "homepage": "https://github.com/j000/todo",
-  "bugs": {
-    "url": "https://github.com/j000/todo/issues"
-  },
-  "dependencies": {
-    "pug": "^2.0.4",
-    "sqlite3": "^4",
-    "express": "^4.17.1"
-  },
-  "license": "GPL-3.0-or-later"
+	"name": "todo",
+	"version": "0.0.1",
+	"description": "Todo list",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Jarosław Rymut",
+	"homepage": "https://github.com/j000/todo",
+	"bugs": {
+		"url": "https://github.com/j000/todo/issues"
+	},
+	"dependencies": {
+		"pug": "^2",
+		"sqlite3": "^4",
+		"express": "^4"
+	},
+	"license": "GPL-3.0-or-later"
 }
