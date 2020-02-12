@@ -11,5 +11,8 @@
   "bugs": {
     "url": "https://github.com/j000/todo/issues"
   },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "license": "GPL-3.0-or-later"
 }
