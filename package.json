@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jarosław Rymut",
+  "homepage": "https://github.com/j000/todo",
+  "bugs": {
+    "url": "https://github.com/j000/todo/issues"
+  },
   "license": "GPL-3.0-or-later"
 }
