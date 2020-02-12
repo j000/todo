@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "pug": "^2.0.4",
+    "sqlite3": "^4",
     "express": "^4.17.1"
   },
   "license": "GPL-3.0-or-later"
