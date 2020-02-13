@@ -14,10 +14,11 @@ app.use('/todos', routes)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  var err = new Error('Not Found')
-  err.status = 404
-  // res.redirect('/404')
-  next(err)
+	console.log(req.path)
+	var err = new Error('Not Found')
+	err.status = 404
+	// res.redirect('/404')
+	next(err)
 })
 
 function errorHandler (err, req, res, next) {
@@ -31,4 +32,4 @@ function errorHandler (err, req, res, next) {
 	res.render('error', { error: err })
 }
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on http://127.0.0.1:${port}/`))
