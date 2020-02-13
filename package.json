@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
-		"monitor": "nodemon --delay 100ms --ignore ./files --ignore ./node_modules index.js",
+		"monitor": "nodemon index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Jarosław Rymut",
@@ -20,6 +20,13 @@
 	},
 	"devDependencies": {
 		"nodemon": "^2"
+	},
+	"nodemonConfig": {
+		"ignore": [
+			"public/*",
+			"files/*"
+		],
+		"delay": "100"
 	},
 	"license": "GPL-3.0-or-later"
 }
