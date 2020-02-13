@@ -4,6 +4,8 @@
 	"description": "Todo list",
 	"main": "index.js",
 	"scripts": {
+		"start": "node index.js",
+		"monitor": "nodemon --delay 100ms --ignore ./files --ignore ./node_modules index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Jarosław Rymut",
@@ -12,10 +14,12 @@
 		"url": "https://github.com/j000/todo/issues"
 	},
 	"dependencies": {
-		"pug": "^2",
 		"sqlite3": "^4",
 		"sequelize": "^5",
 		"express": "^4"
+	},
+	"devDependencies": {
+		"nodemon": "^2"
 	},
 	"license": "GPL-3.0-or-later"
 }
