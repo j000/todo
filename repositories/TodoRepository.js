@@ -8,9 +8,10 @@ class TodoRepository {
 	}
 
 	// create a new todo
-	create(name) {
+	create(name, done) {
 		const newTodo = this.model.build({
-			name
+			name,
+			done
 		})
 
 		return newTodo.save()

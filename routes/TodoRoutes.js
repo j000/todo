@@ -22,8 +22,8 @@ app.get('/:id(\\d+)', (req, res) => {
 
 // add a todo item
 app.post('/', (req, res) => {
-	const { name } = req.body;
-	repository.create(name)
+	const { name, done } = req.body;
+	repository.create(name, done)
 		.then((todo) => res.json(todo))
 		.catch((error) => console.log(error))
 })
