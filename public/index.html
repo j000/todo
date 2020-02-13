@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<title>Todo</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400|Raleway&display=swap" rel="stylesheet">
+		<link href="./css/normalize.min.css" rel="stylesheet">
+		<link href="./css/vuetify.min.css" rel="stylesheet">
+		<link href="./css/materialdesignicons.min.css" rel="stylesheet">
+		<link href="./css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<noscript>
+			<h1>Please enable JavaScript.</h1>
+		</noscript>
+		<div id="app" is="v-app">
+			<v-app-bar app absolute>
+				<v-toolbar-title>Todo list</v-toolbar-title>
+				<v-spacer></v-spacer>
+				<v-switch
+					v-model="$vuetify.theme.dark"
+					primary
+					inset
+					label="Dark theme"
+					></v-switch>
+			</v-app-bar>
+			<v-content>
+				<v-container>
+					<list>
+					</list>
+				</v-container>
+			</v-content>
+		</div>
+
+		<script src="./js/moment.min.js"></script>
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/httpVueLoader.min.js"></script>
+		<script src="./js/axios.min.js"></script>
+		<script src="./js/vuetify.min.js"></script>
+		<script src="./js/main.js" type="module"></script>
+	</body>
+	<!-- vim: set tabstop=2 shiftwidth=2 noexpandtab: -->
+</html>

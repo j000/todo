@@ -1,0 +1,30 @@
+@font-face{
+	font-family:"Material Design Icons";
+	src: url('./materialdesignicons-webfont.ttf') format('truetype');
+}
+body, html {
+	font-family: 'Lato', 'Raleway', 'sans-serif';
+	font-size: 16pt;
+	font-size: 16px;
+	/* font-size: 24px; */
+}
+
+.v-input,
+.v-label {
+	font-size: inherit;
+}
+
+.v-application,
+.v-application .body-1,
+.v-application .caption {
+	font-family: inherit !important;
+}
+
+.v-toolbar__content .v-input--switch .v-input__control {
+	height: 24px;
+	margin: auto;
+}
+
+.done {
+	text-decoration: line-through;
+}
