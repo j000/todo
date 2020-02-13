@@ -5,7 +5,6 @@ const sequelize = require('../Sequelize')
 class TodoRepository {
 	constructor(model) {
 		this.model = model
-		sequelize.sync()
 	}
 
 	// create a new todo

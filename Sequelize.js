@@ -17,4 +17,6 @@ fs
 		sequelize.import(path.join(modelsDir, file));
 	})
 
+sequelize.sync()
+
 module.exports = sequelize;
