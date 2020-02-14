@@ -6,9 +6,14 @@
 		:elevation="fixedelevation"
 	>
 		<v-card-text>
-			<p :class="{ 'done' : todo.done }">
-				{{ todo.name }}
-			</p>
+			<v-textarea
+				v-model="todo.name"
+				auto-grow
+				rows="1"
+				@keyup.ctrl.enter="updateTodo"
+				@change="updateTodo"
+				hint="Zakończ edycję, albo naciśnij Ctrl+Enter, aby zapisać"
+			></v-textarea>
 			<p class="text-right font-weight-light caption">
 				Zaktualizowano: {{ nicedate }}
 			</p>
@@ -24,12 +29,36 @@
 				<v-icon v-else>mdi-checkbox-blank-circle-outline</v-icon>
 			</v-btn>
 			<v-spacer></v-spacer>
+			<v-speed-dial
+				v-model="fab"
+				small
+				direction="left"
+				transition="scale-transition"
+			>
+				<template v-slot:activator>
+					<v-btn
+						v-model="fab"
+						color="blue darken-2"
+						:loading="saving"
+						dark
+						fab small
+					>
+						<v-icon v-if="fab">mdi-close</v-icon>
+						<v-icon v-else>mdi-delete</v-icon>
+						<template v-slot:loader>
+							<span class="custom-loader">
+								<v-icon>mdi-cached</v-icon>
+							</span>
+						</template>
+					</v-btn>
+				</template>
 			<v-btn
 				fab small
 				color="error"
 				v-on:click="deleteTodo"
 				><v-icon>mdi-delete</v-icon>
 			</v-btn>
+			</v-speed-dial>
 		</v-card-actions>
 	</v-card>
 </template>
@@ -38,7 +67,9 @@
 	module.exports = {
 		data: function() {
 			return {
-				showModal: false
+				showModal: false,
+				fab: false,
+				saving: false,
 			}
 		},
 		computed: {
@@ -60,14 +91,17 @@
 		props: ['todo'],
 		methods: {
 			updateTodo: function(event) {
+				this.saving = true
 				axios.put(
 					'/todos/' + this.todo.id,
 					this.todo,
 					this.$root.axiosConfig
 				).then(response => {
 					this.todo = response.data
+					this.saving = false
 				}, error => {
 					console.log(`Problem z połączeniem: ${error}`)
+					this.saving = false
 				})
 			},
 			toggleTodo: function(event) {
@@ -75,6 +109,7 @@
 				this.updateTodo(event)
 			},
 			deleteTodo: function(event) {
+				this.saving = true
 				axios.delete(
 					'/todos/' + this.todo.id,
 					this.$root.axiosConfig
