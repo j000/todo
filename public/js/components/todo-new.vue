@@ -1,14 +1,12 @@
 <template>
-	<div>
-		<v-btn
-			fab
-			fixed bottom right
-			x-large
-			dark color="accent"
-			@click="dialog = true"
-		>
-			<v-icon>mdi-plus</v-icon>
-		</v-btn>
+	<v-btn
+		fab
+		fixed bottom right
+		x-large
+		dark color="accent"
+		@click="dialog = true"
+	>
+		<v-icon>mdi-plus</v-icon>
 		<v-dialog
 			v-model="dialog"
 			max-width="500px"
@@ -52,7 +50,7 @@
 				</v-card-actions>
 			</v-card>
 		</v-dialog>
-	</div>
+	</v-btn>
 </template>
 
 <script>
@@ -90,7 +88,7 @@
 					this.dialog = false
 					this.$parent.todos.push(response.data)
 				}, error => {
-					console.log('Problem z połączeniem')
+					console.log('Problem z połączeniem: ' + error)
 				})
 			},
 		},
@@ -101,7 +99,7 @@
 			).then(response => {
 				this.todos = response.data
 			}, error => {
-				console.log('Problem z połączeniem')
+				console.log('Problem z połączeniem: ' + error)
 			})
 		},
 	}
