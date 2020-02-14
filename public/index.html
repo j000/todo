@@ -18,11 +18,12 @@
 			<h1>Please enable JavaScript.</h1>
 		</noscript>
 		<div id="app" is="v-app">
-			<v-app-bar app absolute>
+			<v-app-bar app>
 				<v-toolbar-title>Todo</v-toolbar-title>
 				<v-spacer></v-spacer>
 				<v-switch
 					v-model="$vuetify.theme.dark"
+					@change="changedTheme"
 					primary
 					inset
 					label="Ciemny motyw"
@@ -40,6 +41,7 @@
 		<script src="./js/vue.min.js"></script>
 		<script src="./js/httpVueLoader.min.js"></script>
 		<script src="./js/vuetify.min.js"></script>
+		<script src="./js/vue-cookies.js"></script>
 		<script src="./js/axios.min.js"></script>
 		<script src="./js/main.js" type="module"></script>
 	</body>

@@ -4,7 +4,7 @@ const app = new Vue({
 	components: {
 		'list': httpVueLoader('./js/components/todo-list.vue'),
 	},
-  data: {
+	data: {
 		message: 'Hello Vue!',
 		endpoint: '/',
 		axiosConfig: {
@@ -14,7 +14,15 @@ const app = new Vue({
 			}
 		},
 	},
+	methods: {
+		changedTheme: function(event) {
+			console.log('theme changed')
+			this.$cookies.set('darkTheme', this.$vuetify.theme.dark ? 'dark' : 'light')
+		},
+	},
 	created () {
-		this.$vuetify.theme.dark = true
+		this.$cookies.config('30d')
+		let cookie = this.$cookies.get('darkTheme')
+		this.$vuetify.theme.dark = (cookie === 'dark')
 	},
 })
