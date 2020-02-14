@@ -25,10 +25,7 @@
 		},
 		data: function() {
 			return {
-				todos: [
-					{ id: 1, name: '1', done: false },
-					{ id: 2, name: '2', done: false },
-				],
+				todos: [],
 			}
 		},
 		methods: {

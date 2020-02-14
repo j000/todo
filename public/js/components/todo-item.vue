@@ -17,6 +17,7 @@
 			<v-btn
 				fab small
 				:color="checkcolor"
+				class="white--text"
 				v-on:click="toggleTodo"
 				>
 				<v-icon v-if="todo.done">mdi-checkbox-marked-circle-outline</v-icon>
@@ -25,7 +26,7 @@
 			<v-spacer></v-spacer>
 			<v-btn
 				fab small
-				color="warning"
+				color="error"
 				v-on:click="deleteTodo"
 				><v-icon>mdi-delete</v-icon>
 			</v-btn>
@@ -53,10 +54,7 @@
 			cardcolor: function() {
 				return this.todo.done ? ((this.$vuetify.theme.dark) ?
 					'green darken-4' : 'light-green lighten-4')
-					: '' 
-					// ((this.$vuetify.theme.dark) ?
-					// 	'grey darken-4' : 'grey lighten-2')
-					// : ''
+					: ''
 			},
 		},
 		props: ['todo'],
@@ -90,10 +88,3 @@
 		},
 	}
 </script>
-
-<style>
-.todo-item {
-	margin-top: 0.25em;
-	margin-bottom: 0.25em;
-}
-</style>

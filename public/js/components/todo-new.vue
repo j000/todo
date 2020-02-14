@@ -46,7 +46,6 @@
 					</v-btn>
 					<v-spacer></v-spacer>
 					<v-btn class="ma-2" color="light-green" @click="saveTodo">
-						<!-- <v&#45;icon left>mdi&#45;checkbox&#45;marked&#45;circle</v&#45;icon> -->
 						<v-icon left>mdi-cloud-upload</v-icon>
 						Zapisz
 					</v-btn>
